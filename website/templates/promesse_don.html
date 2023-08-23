@@ -1,0 +1,89 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="w3-main" style="margin-left: 320px; margin-right: 40px">
+  <div class="w3-card-4 w3-theme-kv1" id="contact" style="margin-top: 35px">
+    <div class="w3-container w3-theme-kv">
+      <h1 class="w3-xxlarge w3-padding-16"><p>Total déjà collecté: {{total_pledges}}€ !</p></h1>
+    </div>
+    <div class="w3-row">
+      <div class="w3-col s6 w3-theme-kv1 w3-center">
+        <div style="max-width:600px;" class="w3-container">
+          <div class="w3-container w3-border w3-card-4 w3-round-xlarge w3-padding w3-margin w3-light-grey">
+            <div class="w3-container w3-theme-kv3 w3-round">
+              <h3 class="w3-padding"><b>Je donne :</b></h3>
+            </div>
+            <form action="{{ url_for('views.promesse_don') }}" target="_self" method="post">
+              <div class="w3-section">
+                <div class="w3-section">
+                  <label>Pledge</label> <select class="w3-select w3-border" type="text" name="pledges_euro" required="">
+                    <option value="" disabled selected>
+                      Choose your option
+                    </option>
+                    <option value="50.99">
+                      50.99
+                    </option>
+                    <option value="100.99">
+                      100.99
+                    </option>
+                    <option value="200.99">
+                      200.99
+                    </option>
+                    <option value="500.99">
+                      500.99
+                    </option>
+                  </select>
+                </div><label>First Name</label> <input class="w3-input w3-border" type="text" name="name" required="">
+              </div>
+              <div class="w3-section">
+                <label>Last Name</label> <input class="w3-input w3-border" type="text" name="last_name" required="">
+              </div>
+              <div class="w3-section">
+                <label>Email</label> <input class="w3-input w3-border" type="text" name="email" required="">
+              </div><button type="submit" class="w3-button w3-rounded w3-block w3-padding-large w3-theme-kv3 w3-margin-bottom">Money me</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col s6 w3-theme-kv1 w3-center">
+        <!-- Packages / Pricing Tables -->
+        <div style="max-width:600px;" class="w3-table-all w3-card-2">
+          <div class="w3-container w3-theme-kv3 w3-round">
+            <h3 class="w3-padding"><b>Ils ont déjà donné :</b></h3>
+          </div>
+          <table class="w3-table-all w3-center">
+            <thead>
+              <tr class="w3-theme-kv3">
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email Adress</th>
+                <th>Pledge</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              {% for row in rankings %} 
+              <tr>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="w3-container w3-theme-kv">
+        <h1 class="w3-xxlarge w3-padding-16"><b>Mais tu peux donner plus, et je depenserai cet argent en café...</b></h1>
+      </div>
+    </div>
+  </div>
+  
+  {% endblock %}
+
+
+
+
+

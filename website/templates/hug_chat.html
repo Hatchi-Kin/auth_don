@@ -1,0 +1,60 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+
+<div class="w3-main" style="margin-left: 320px; margin-right: 40px">
+  <div class="w3-card-4 w3-theme-kv1" id="contact" style="margin-top: 35px">
+    <div class="w3-container w3-theme-kv">
+      <form style="margin-top: 35px" class="w3-container" method="post" action="/hug_chat">
+        <div class="w3-section">
+          <textarea class="w3-input w3-border w3-margin-top" style="resize: none" type="text" name="message" required="" placeholder="Talk to me"></textarea>
+        </div>
+        <div class="w3-row">
+          <div class="w3-third w3-container">
+            <button type="submit" class="w3-button w3-padding w3-margin-bottom w3-theme-kv3">Send Message</button>
+          </div>
+          <div class="w3-third w3-container"></div>
+          <div id="loading" class="w3-animate-top w3-twothird">
+            <p>Loading...</p><!-- add a loading animation element -->
+          </div>
+        </div>
+      </form>
+    </div>{% for hug in last_ten %} {% if hug['is_human'] == False %}
+    <div class="w3-container">
+      <div class="w3-container w3-quarter"></div>
+      <div class="w3-container w3-threequarter">
+        <div class="w3-panel w3-small w3-border w3-light-grey w3-round-large">
+          <p>{{hug['username']}} said:</p>
+          <p class="w3-margin-left w3-large">{{hug['text']}}</p>
+        </div>
+      </div>
+    </div>{% endif %} {% if hug['is_human'] == True %}
+    <div class="w3-container">
+      <div class="w3-container w3-threequarter">
+        <div class="w3-panel w3-small w3-border w3-light-grey w3-round-large">
+          <p>{{hug['username']}} said:</p>
+          <p class="w3-margin-left w3-large">{{hug['text']}}</p>
+        </div>
+      </div>
+      <div class="w3-container w3-quarter"></div>
+    </div>{% endif %} {% endfor %}
+    <div class="w3-container w3-theme-kv">
+      <h1 class="w3-xxlarge w3-padding-16"><b>$ sudo pip install windows</b></h1>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+<script>
+
+
+
+
+  $(document).ready(function () {
+    $("#loading").hide(); // hide the loading animation initially
+    $("form").submit(function () {
+      $("#loading").show(); // show the loading animation when the form is submitted
+    });
+  });
+</script>
+
+{% endblock %}

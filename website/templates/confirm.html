@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="w3-main" style="margin-left: 320px; margin-right: 40px">
+    <div class="w3-card-4 w3-theme-kv1" id="contact" style="margin-top: 35px">
+  
+  
+      <div class="w3-container w3-theme-kv">
+        <h1 class="w3-xxlarge w3-padding-16"><b>Tu t'appretes à me donner de l'argent...</b></h1>
+      </div>
+  
+  
+      <div class="w3-row">
+        <div style="max-width:600px;" class="w3-container">
+          <div class="w3-container w3-border w3-card-4 w3-round-xlarge w3-padding w3-margin w3-light-grey">
+
+            <form action="/promesse_don" target="_blank" method="post">
+            <div>
+                <p>You are about to give me {pledge} €</p>
+
+                <button type="submit"  class="w3-button w3-rounded w3-block w3-padding-large w3-theme-kv3 w3-margin-bottom">Confirm</button>
+            </div>
+            </form>
+  
+          </div>
+        </div>
+
+      </div>
+  
+  
+      <div class="w3-container w3-theme-kv">
+        <h1 class="w3-xxlarge w3-padding-16"><b>Est ce que tu es bien sur?</b></h1>
+      </div>
+  
+    </div>
+  </div>
+  {% endblock %}

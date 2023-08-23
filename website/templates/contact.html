@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="w3-main" style="margin-left: 320px; margin-right: 40px">
+  <div class="w3-card-4 w3-theme-kv1" id="contact" style="margin-top: 35px">
+    <div class="w3-container w3-theme-kv">
+      <h1 class="w3-xxlarge w3-padding-16"><b>Si tu veux laisser un message...</b></h1>
+    </div>
+    <div class="w3-container">
+      <form class="w3-third" action="/contact" method="post">
+        <div class="w3-section">
+          <label>Name</label> <input class="w3-input w3-border" type="text" name="name">
+        </div>
+        <div class="w3-section">
+          <label>Message</label> 
+          <textarea class="w3-input w3-border" style="resize: none" type="text" name="message" required="">
+      </textarea>
+        </div><button type="submit" class="w3-button w3-block w3-padding-large w3-theme-kv3">Send Message</button>
+        <p class="w3-small">Nombre total de messages envoyés: {{msg_count}}</p>
+        <p class="w3-small">Nombre total de nouveaux amis: 0</p>
+      </form>
+      <div class="w3-container w3-twothird">
+        {% for row in last_ten %}
+        <div class="w3-panel w3-small w3-border w3-light-grey w3-round-large">
+          <p>{{ row['username'] }}:</p>
+          <p class="w3-margin-left w3-large">{{ row['text'] }}</p>
+        </div>{% endfor %}
+      </div>
+    </div>
+    <div class="w3-container w3-theme-kv">
+      <h1 class="w3-xxlarge w3-padding-16"><b>Pas sur que tu seras lu..</b></h1>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

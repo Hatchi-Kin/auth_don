@@ -1,0 +1,153 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="w3-main" style="margin-left: 320px; margin-right: 40px">
+  <div class="w3-card-4 w3-theme-kv1" id="cdc" style="margin-top: 35px">
+    <!-- Header -->
+    <div class="w3-container w3-theme-kv">
+      <h1 class="w3-margin w3-jumbo">Cahier des charges</h1>
+      <p class="w3-xlarge">webb app Money Me - https://github.com/Hatchi-Kin</p>
+    </div>
+    <!-- First Grid -->
+    <div class="w3-row-padding w3-padding-64 w3-container w3-light-grey">
+      <div class="w3-content">
+        <div class="w3-threequarter">
+          <ul class="w3-ul w3-card-4 w3-hoverable w3-border w3-text-black w3-margin-left">
+            <header class="w3-margin">
+              <h2>Liste des fonctionalités :</h2>
+            </header>
+            <li>Page d'accueil contenant le cahier des charges</li>
+            <li>Formulaire de dons permettant aux utilisateurs de saisir leurs informations personnelles et le montant de leur promesse de don.</li>
+            <li class="w3-display-container">Fait du très bon café <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-right">×</span></li>
+            <li>Page permettant de confirmer l'enregistrement de la promesse de don ou d'afficher une erreur.</li>
+            <li>Compteur de dons dynamique affichant le montant total collecté jusqu'à présent.</li>
+            <li>Tableau afichant le top 10 des donnateurs.</li>
+            <li>Pages de communication avec d'autres utilisateurs de l'app</li>
+            <li>Stockage sécurisé des données des donateurs conformément aux réglementations en vigueur sur la protection des données personnelles (RGPD)</li>
+            <li>Le texte de Stig Dagerman et la musique des Têtes Raides</li>
+            <li>L'intégration de HuggingChat</li>
+            <li>La version web app de bot discord que tous les jeunes s'arrachent: Roomba</li>
+            <li>un mauvais mot du jour, tiré au hasard, dans une liste tamponée par notre suprême deleguée.</li>
+          </ul>
+        </div>
+        <div class="w3-quarter w3-center w3-jumbo"><i class="fa fa-coffee w3-padding-64 w3-text-purple w3-margin-right"></i></div>
+      </div>
+    </div>
+    <!-- Second Grid -->
+    <div class="w3-row-padding w3-theme-kv1 w3-padding-64 w3-container">
+      <div class="w3-content">
+        <div class="w3-quarter w3-center"><i class="fa fa-desktop w3-margin-bottom w3-text-indigo" style="font-size:120px"></i></div>
+        <div class="w3-threequarter">
+          <h1>Choix des technologies utilisées :</h1>
+          <table class="w3-table-all w3-card-2">
+            <tr>
+              <th>Besoins</th>
+              <th>Réponse</th>
+              <th>Pièces d'or</th>
+            </tr>
+            <tr>
+              <td>Pour le back-end</td>
+              <td>Python et la library Flask pour déployer une web app simple.</td>
+              <td>70</td>
+            </tr>
+            <tr>
+              <td>Pour le front-end</td>
+              <td>Le mini framework W3.CSS pour obtenir une app legère et responsive en proposant un design très simple et moderne.</td>
+              <td>80</td>
+            </tr>
+            <tr>
+              <td>Pour le stockage des données</td>
+              <td>Une partie avec MySQL, l'autre avec sqlite. Pour tester si c'est vraiment plus facile de changer grâce à la POO.</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <td>Pour le déployement</td>
+              <td>Docker, parce que d'apres Sensei Stephane: "Docker, c'est la vie."</td>
+              <td>35</td>
+            </tr>
+            <tr>
+              <td>Pour l'intégration de l'IA</td>
+              <td>HuggingFace et la library hugface</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <td>Pour le room bot</td>
+              <td>Secret tm</td>
+              <td>400</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+      <h1 class="w3-center">S.W.O.T. :</h1>
+      <div class="w3-container w3-margin w3-padding-24 w3-card-4">
+        <div class="w3-cell-row w3-border">
+          <div class="w3-container w3-theme-sw2 w3-cell w3-cell-top">
+            <h3>FORCES.</h3>
+            <p>pas cher</p>
+            <p>très lisible</p>
+            <p>très rapide</p>
+            <p>dynamique et responsive</p>
+          </div>
+          <div class="w3-container w3-theme-sw3 w3-cell w3-cell-top">
+            <h3>FAIBLESSES</h3>
+            <p>pas de photos tristes</p>
+            <p>pas de réduction d'impôts</p>
+            <p>pas de 'vraie' casue à défendre</p>
+            <p>pas d'animation modernes</p>
+          </div>
+        </div>
+        <div class="w3-cell-row w3-border">
+          <div class="w3-container w3-theme-sw4 w3-cell w3-cell-bottom">
+            <h3>OPPORTUNITES</h3>
+            <p>pas de pubs ni de cookies chiants</p>
+            <p>app épurée, facile à lire</p>
+            <p>Aucun autre site n'a le Room Bot</p>
+          </div>
+          <div class="w3-container w3-theme-sw1 w3-cell w3-cell-bottom">
+            <h3>MENACES</h3>
+            <p>15 autres ml_ops sur le territoire</p>
+            <p>certains n'ont rien mangé depuis 4 jours.</p>
+            <p>Donc beaucoup de concurrence</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w3-row-padding w3-theme-kv1 w3-padding-64 w3-container">
+      <div class="w3-content">
+        <h2 class="w3-center">Benchmark:</h2>
+        <div class="w3-content w3-section" style="max-width: 500px"><img class="mySlides w3-image" src="../static/img/secours_populaire.jpg" style="width: 100%" alt="secours_populaire"> <img class="mySlides" src="../static/img/solidarit%C3%A9_int.jpg" style="width: 100%" alt="solidarit%C3%A9_int"> <img class="mySlides" src="../static/img/croix-rouge2.png" style="width: 100%" alt="croix-rouge2"> <img class="mySlides" src="../static/img/don-sang.png" style="width: 100%" alt="don-sang"></div>
+      </div>
+    </div>
+    <div class="w3-container w3-theme-kv">
+      <a href="/le_pardon" class="w3-hover-sepia" style="text-decoration: none">
+        
+      <h2 class="w3-xlarge w3-padding-16">Mauvais mot du moment: <b class="w3-xxlarge">"{{bad_word}}"</b></h2></a>
+      <p>{{definition}}</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  var myIndex = 0;
+  carousel();
+
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {
+      myIndex = 1;
+    }
+    x[myIndex - 1].style.display = "block";
+    setTimeout(carousel, 3500); // Change image every 3.5 seconds
+  }
+</script> 
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+  <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="rankings" style="margin-top:55px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Rankings.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Compete with all your new friends and try to earn your spot on the leaderboard !</p>
+    <p>So far, we have collected a grand total of: <span class="w3-pale-red w3-text-black w3-large" style="text-shadow:1px 1px 0 #444">{{total_pledges}}</span>€ !</p>
+  </div>
+
+  <table class="w3-table-all">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Adress</th>
+        <th>Pledge</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for row in rankings %}
+          <tr>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+</div>
+     
+
+
+{% endblock %}

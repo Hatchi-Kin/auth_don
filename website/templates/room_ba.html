@@ -1,0 +1,78 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="w3-main" style="margin-left: 320px; margin-right: 40px">
+  <div class="w3-card-4 w3-theme-kv1" id="services" style="margin-top: 35px">
+    <div class="w3-container w3-theme-kv">
+      <h1 class="w3-xxlarge w3-padding-16"><b>Room ba est maintenant une web app...</b></h1>
+    </div>
+    <div class="w3-container w3-margin-bottom"></div>
+    <div class="w3-row-padding">
+      <div class="w3-half">
+        <div class="w3-card w3-animate-top">
+          <div class="w3-container w3-theme-kv4">
+            <h3>Ce matin:</h3>
+            <p>{{event_matin.get_date()}}</p>
+          </div>
+          <ul class="w3-ul w3-border-top">
+            <li>
+              <h3>Salle(s):</h3>
+              <p>{{event_matin.get_location()}}</p>
+            </li>
+            <li>
+              <h3>Commence à:</h3>
+              <p>{{event_matin.get_horaire()}}</p>
+            </li>
+            <li>
+              <h3>Intervenant(s):</h3>
+              <p>{{event_matin.get_intervenant()}}</p>
+            </li>
+            <li>
+              <h3>Description:</h3>
+              <p>{{event_matin.get_descript()}}</p>
+            </li>
+          </ul>
+          <div class="w3-container w3-theme-kv4 w3-large w3-margin-bottom">
+            <span class="w3-right">Le temps passe vite.</span>
+          </div>
+        </div>
+      </div>
+      <div class="w3-half">
+        <div class="w3-card w3-animate-top">
+          <div class="w3-container w3-theme-kv4">
+            <h3>Cet après-midi:</h3>
+            <p classe="w3-small">{{event_aprem.get_date()}}</p>
+          </div>
+          <ul class="w3-ul w3-border-top">
+            <li>
+              <h3>Salle(s):</h3>
+              <p>{{event_aprem.get_location()}}</p>
+            </li>
+            <li>
+              <h3>Commence à:</h3>
+              <p>{{event_aprem.get_horaire()}}</p>
+            </li>
+            <li>
+              <h3>Intervenant(s):</h3>
+              <p>{{event_aprem.get_intervenant()}}</p>
+            </li>
+            <li>
+              <h3>Description:</h3>
+              <p>{{event_aprem.get_descript()}}</p>
+            </li>
+          </ul>
+          <div class="w3-container w3-theme-kv4 w3-large w3-margin-bottom">
+            <span class="w3-right">On a commencé le 2 mai</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w3-container w3-theme-kv w3-padding-top">
+      <h1 class="w3-xxlarge w3-padding-16"><b>... pour ne plus jamais être perdu.</b></h1>
+    </div>
+    <div class="w3-container w3-theme-kv"></div>
+  </div>
+</div>
+
+{% endblock %}

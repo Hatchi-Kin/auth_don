@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hatchi-Kin</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../static/css/w3.css">
+  <link rel="stylesheet" href="../static/css/w3-theme.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+    body, h1, h2, h3, h4, h5 {
+      font-family: "Roboto", sans-serif;
+    }
+
+    body {
+      font-size: 16px;
+    }
+
+    .w3-half img {
+      margin-bottom: -6px;
+      margin-top: 16px;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    .w3-half img:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="w3-theme-kv2">
+  <!-- Sidebar/menu -->
+  {% if user %}
+  <nav class="w3-sidebar w3-theme-kv w3-collapse w3-top w3-large w3-padding" style="z-index: 3; width: 260px; font-weight: bold; opacity: 0.9;" id="mySidebar">
+    <br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width: 100%; font-size: 22px">Close Menu</a>
+    <div class="w3-container">
+      <div class="w3-padding-48">
+        <p>Logged in as:</p>
+        <h2><b>{{user.name}}</b></h2>
+      </div>
+     
+    </div>
+    <div class="w3-bar-block">
+      <a href="/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-amber">Home</a> 
+      <a href="/le_pardon" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-amber">Le Pardon</a> 
+      <a href="/contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-amber">Contact</a> 
+      <a href="/hug_chat" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-amber">Hug Chat</a> 
+      <a href="/room_ba" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-amber">Room ba</a>
+      <a href="/promesse_don" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-amber">Promesse de Don</a>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-padding-48">
+        <a href="/logout" class="w3-small w3-btn w3-hover-red">log out</a>
+      </div>
+    </div>
+
+
+
+    {% else %}
+    <nav class="w3-sidebar w3-theme-kv w3-collapse w3-top w3-large w3-padding" style="z-index: 3; width: 260px; font-weight: bold; opacity: 0.9;" id="mySidebar">
+      <br>
+      <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width: 100%; font-size: 22px">Close Menu</a>
+      <div class="w3-container">
+        <h2 class="w3-padding-48"><b>You should log in</b></h2>
+      </div>
+    <div class="w3-bar-block">
+      <a href="/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey w3-grayscale">Home</a> 
+      <a href="" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey w3-grayscale">Le Pardon</a> 
+      <a href="" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey w3-grayscale">Contact</a> 
+      <a href="" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey w3-grayscale">Hug Chat</a> 
+      <a href="" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey w3-grayscale">Room ba</a>
+      <a href="" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey w3-grayscale">Promesse de Don</a>
+        
+      {% endif %}
+  </nav><!-- Top menu on small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-theme-kv w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-theme-kv w3-margin-right" onclick="w3_open()">☰</a> <span>Hatchi-Kin</span>
+  </header><!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor: pointer" title="close side menu" id="myOverlay"></div>
+  
+
+  {% block content %}
+   <!-- ######################################################## -->
+   <!-- ######################################################## -->
+   <!-- ######################################################## -->
+   <!-- ####  https://www.w3schools.com/w3css/default.asp  ##### -->
+   <!-- ######################################################## -->
+   <!-- ######################################################## -->
+   <!-- ######################################################## -->
+   {% endblock %}
+
+   
+  <div class="w3-theme-kv w3-container w3-padding-16" style="margin-top: 65px; padding-right: 58px; opacity: 0.9;">
+    <p class="w3-right w3-margin-right">Hatchi-Kin... since the 80's: 
+      <a href="https://github.com/Hatchi-Kin" 
+      title="github.com/Hatchi-Kin" target="_blank" 
+      class="w3-hover-opacity w3-margin-left">
+      <img class="w3-image w3-round-large" 
+      src="../static/img/GitHub.png" alt="Githublogo" style="max-width: 48px;"></a></p>
+  </div>
+  <script>
+    // Script to open and close sidebar
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+    }
+  </script>
+</body>
+</html>
